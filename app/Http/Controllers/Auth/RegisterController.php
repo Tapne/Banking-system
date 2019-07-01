@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Balance;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -65,12 +67,33 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        // Stworzenie użytkownika
+        $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'surname' => $data['surname'],
             'year_birth' => $data['birth'],
             'password' => Hash::make($data['password']),
         ]);
+
+
+        // Sprawdzenie czy istnieje numer konta
+        // Utworzenie konta bankowego
+        $tmp = true;
+        while($tmp) {
+            // Losowanie numeru konta
+            $number = rand(100000000, 999999999);
+            if(Balance::where('num_acc_bank', $number)->first() == "") {
+                $tmp = false;
+                Balance::insertGetId([
+                    'money' => 0,
+                    'id_acc' => User::where('email', $data['email'])->first()->id,
+                    'num_acc_bank' => $number,
+                ]);
+            }
+        }
+
+        return $user;
     }
 }

@@ -3,9 +3,16 @@
 Project made with:
 - Laravel 5.8
 
-### Task lists:
-- [x] login
-- [x] register
+Additionally used:
+- Font Awesome v5.9.0
+
+### Functions lists:
+- login
+- register
+- address book
+  - inserting
+  - editing
+  - deleting
 
 
 # PL
@@ -14,6 +21,13 @@ Project made with:
 Projekt wykonany w:
 - Laravel 5.8
 
-### Lista zadań:
-- [x] logowanie
-- [x] rejestracja
+Dodatkowo użyte:
+- Font Awesome v5.9.0
+
+### Lista funkcji:
+- logowanie
+- rejestracja
+- książka adresowa
+  - dodawanie
+  - edytowanie
+  - usuwanie

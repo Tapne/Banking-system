@@ -83,7 +83,7 @@
     <div class="row justify-content-center mt-3">
         <form class="form-inline">
             <div class="form-group mr-1">
-                <button class="btn btn-primary">Zrób przelew</button>
+                <button formaction="{{ url('/banktransfer') }}" class="btn btn-outline-dark">Zrób przelew</button>
             </div>
             <div class="form-group mr-1">
                 <button class="btn btn-primary">a</button>

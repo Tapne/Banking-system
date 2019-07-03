@@ -22,3 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resources([
     'addressbook' => 'AddressBookController',
 ]);
+
+Route::resources([
+    'banktransfer' => 'BankTransferController',
+]);

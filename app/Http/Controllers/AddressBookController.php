@@ -35,7 +35,7 @@ class AddressBookController extends Controller
             'accnumber' => 'required|exists:balances,num_acc_bank',
         ]);
 
-        AddressBook::insert([
+        AddressBook::create([
             'id_acc' => Auth::user()->id,
             'own_name' => $request->ownname,
             'name' => $request->name,

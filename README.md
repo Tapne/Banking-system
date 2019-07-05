@@ -13,6 +13,8 @@ Additionally used:
   - inserting
   - editing
   - deleting
+- bank transfers
+  - history
 
 
 # PL
@@ -31,3 +33,5 @@ Dodatkowo użyte:
   - dodawanie
   - edytowanie
   - usuwanie
+- przelewy
+  - historia

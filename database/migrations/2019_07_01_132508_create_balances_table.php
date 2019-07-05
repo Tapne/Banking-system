@@ -6,11 +6,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateBalancesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         // Tabela zawierająca stan konta bankowego
@@ -24,11 +19,6 @@ class CreateBalancesTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('balances');

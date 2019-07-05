@@ -6,3 +6,13 @@
 .home-card-ico {
     color: rgba(32,32,33,0.76);
 }
+
+#historytable {
+    height: 400px;
+    overflow-y: auto;
+}
+
+#historytableall {
+    height: 600px;
+    overflow-y: auto;
+}

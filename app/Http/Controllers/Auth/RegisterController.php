@@ -67,7 +67,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
         // Stworzenie użytkownika
         $user =  User::create([
             'name' => $data['name'],
@@ -77,7 +76,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-
         // Sprawdzenie czy istnieje numer konta
         // Utworzenie konta bankowego
         $tmp = true;
@@ -86,8 +84,7 @@ class RegisterController extends Controller
             $number = rand(100000000, 999999999);
             if(Balance::where('num_acc_bank', $number)->first() == "") {
                 $tmp = false;
-                Balance::insertGetId([
-                    'money' => 0,
+                Balance::create([
                     'id_acc' => User::where('email', $data['email'])->first()->id,
                     'num_acc_bank' => $number,
                 ]);
